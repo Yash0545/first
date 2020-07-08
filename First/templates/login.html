@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+	function validate()
+	{
+		var pass1=document.myform.pwd.value;
+		var us=document.myform.Uname.value;
+		var pos=us.indexOf("@");
+		
+		if(pass1.length > 4)
+		{
+				alert("Password must be of only 4 digits ");
+				return false;
+		}
+		if(pos < 1 || us.length < 6)
+		{
+				alert("Please enter valid username");
+				return false;
+		}
+		return true;
+	}
+		
+        </script>
+</head>
+<body>
+<img src="download.jfif">
+		<h1>USER LOGIN</h1>
+        <br>
+        <h2><a href="{%url 'Main'%}">Home</a></h2>
+
+                    <br><br>
+		<img src="download2.jfif"><br>
+            
+    <form name="myform" action="" onsubmit="return validate()">
+                    
+                
+                    USERNAME:- <input type="text" name="Uname" required>
+                    <br><br>
+                    PASSWORD:- <input type="password" name= "pwd" required>
+                    <br><br>
+                    <input type="submit" value="Login">
+      </form>
+      <ul>
+        		<li><p>New User?
+        		<a href="{%url 'index3'%}">Register Here</a></p></li>
+    		</ul>
+        <a href="{%url 'Main'%}">Home</a>
+</body>
+</html>

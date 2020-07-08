@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function validate()
+{
+var mob1=document.myform.Umobile.value;
+var pass1=document.myform.pass.value;
+var us=document.myform.Username.value;
+var pos=us.indexOf("@");
+if(mob1.length < 10 || mob1.length > 10)
+{
+	alert("Mobile Number is incorrect");
+	return false;
+}
+if(pos < 1 || us.length < 6)
+{
+		alert("Please enter valid username");
+		return false;
+}
+if(pass.length > 4 || pass.length < 4)
+{
+		alert("Password must have 4 digits");
+		return false;
+}
+return true;
+}
+
+
+</script>
+</head>
+<body>
+ <h2>ENTER USER DETAILS</h2>
+<form name="myform" action="" method="post" onsubmit="return validate()">
+
+		<p>NAME</p>
+      	<input type="text" name="Uname" required>
+         <p>MOBILE NO</p>
+         <input type="text" name="Umobile" required>
+                                
+          <p>USER NAME</p>
+            <input type="text" name="Username" required>
+
+             <p>PASSWORD(4 digits)</p>
+             <input type="text" name="pass" required>
+                                
+             <p> <input type="submit" name="Add" value="Add">
+			<p><a href="{%url 'Admin'%}">Back</a></p>
+
+</form>
+
+
+</body>
+</html>
